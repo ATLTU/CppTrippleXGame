@@ -1,64 +1,34 @@
-#include <iostream>
 #include <ctime>
+#include "PlayGame.h"
 using namespace std;
 
-void PrintIntroduction(int Difficulity)
+class PointerNum
 {
-    //Print welcome message to terminal
-    cout << "\n\nYou locked your mothers birthday date on a flashdrive that you forgot password for...\n";
-    cout << "You start at folder:  " << Difficulity << "\n";
-    cout << "Enter the correct code to continue...\n";
-    cout << "===========================================================\n";
-}
+    public:
+        PointerNum(int one = 1, int two = 2, int three = 3)
+        {
+            first = one;
+            second = two;
+            third = three;
+        }
+        int All()
+        {
+            return first * second * third;
+        }
+    private:
+        int first;
+        int second;
+        int third;
+};
 
-bool PlayGame(int Difficulity)
-{
-    PrintIntroduction(Difficulity);
-    
-    const int CodeA = rand() % Difficulity + Difficulity;
-    const int CodeB = rand() % Difficulity + Difficulity;
-    const int CodeC = rand() % Difficulity + Difficulity;
-
-    const int CodeSum = CodeA + CodeB + CodeC;
-    const int CodeProd = CodeA * CodeB * CodeC;
-
-    //Print sum and product to the terminal
-    cout << "\n + There are 3 numbers in the code";
-    cout << "\n + The code add-up to: " << CodeSum;
-    cout << "\n + The code multiply to give: " << CodeProd << "\n";
-
-    //Storage for player guesses
-    int GuessA, GuessB, GuessC;
-    cin >> GuessA >> GuessB >> GuessC;
-
-    //Allows to see what player typed in
-    //cout << "You entered: " << GuessA << GuessB << GuessC;
-
-    int GuessSum = GuessA + GuessB + GuessC;
-    int GuessProd = GuessA * GuessB * GuessC;
-
-    
-    cout << "\n The code you wrote add-up to: " << GuessSum;
-    cout << "\n The code you wrote multiply to give: " << GuessProd;
-
-    //Check if the player guess is correct
-    if (GuessSum == CodeSum && GuessProd == CodeProd)
-    {
-        cout << "\n You guessed the code!";
-        return true;
-    } 
-    else 
-    {
-        cout << "\n Still locked, try again";
-        return false;
-    }
-}
 
 int main()
 {
+    
     srand(time(NULL)); //Create new random based on time of day
+
     int LevelDifficulity = 1;
-    const int MaxDifficulity = 10;
+    const int MaxDifficulity = 5;
 
     while (LevelDifficulity <= MaxDifficulity) //Loops the game until all lavels are completed
     {
@@ -73,6 +43,26 @@ int main()
             LevelDifficulity++;
         }    
     }
-    cout << "Congrats.... The file is empty";
+
+    cout << "\n\nCongrats.... The file is empty\n";
+
+    cout << "Press Enter to print Pointer number";
+    cin.ignore();
+
+    //Pointer logic
+    PointerNum Pointer1(3,5,2);
+    PointerNum Pointer2(6,2,1);
+    PointerNum *ptrPointerNum;
+
+    ptrPointerNum =&Pointer1;
+    cout << "Pointer1: " << ptrPointerNum ->All() << "\n";
+
+    ptrPointerNum =&Pointer2;
+    cout << "Pointer2: " << ptrPointerNum ->All() << "\n";
+
+    cout << "Press Enter to exit";
+    cin.ignore();
+
+    delete ptrPointerNum;
     return 0;
 }
