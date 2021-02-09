@@ -44,7 +44,7 @@ int main()
         }    
     }
 
-    cout << "\n\nCongrats.... The file is empty\n";
+    cout << "\n\nCongrats you went throw all folders.... The folders are empty\n";
 
     cout << "Press Enter to print Pointer number";
     cin.ignore();

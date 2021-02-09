@@ -5,9 +5,9 @@ using namespace std;
 void PrintIntroduction(int Difficulity)
 {
     //Print welcome message to terminal
-    cout << "\n\nYou locked your mothers birthday date on a flashdrive that you forgot password for...\n";
+    cout << "\n\n You found a random usb and wanna peek inside...\n";
+    cout << "Enter code to unlock the folders inside\n";
     cout << "You start at folder:  " << Difficulity << "\n";
-    cout << "Enter the correct code to continue...\n";
     cout << "===========================================================\n";
 }
 
@@ -27,9 +27,9 @@ bool PlayGame(int Difficulity)
     //cout << CodeA << CodeB << CodeC;
 
     //Print sum and product to the terminal
-    cout << "\n + There are 3 numbers in the code";
+    cout << "\n + Code contains 3 different numbers";
     cout << "\n + The code add-up to: " << CodeSum;
-    cout << "\n + The code multiply to give: " << CodeProd << "\n";
+    cout << "\n + The code multiply to: " << CodeProd << "\n";
 
     //Storage for player guesses
     int GuessA, GuessB, GuessC;
