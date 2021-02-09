@@ -44,7 +44,7 @@ bool PlayGame(int Difficulity)
     //Check if the player guess is correct
     if (GuessSum == CodeSum && GuessProd == CodeProd)
     {
-        cout << "\n You got to the file!";
+        cout << "\n You guessed the code!";
         return true;
     } 
     else 
@@ -71,7 +71,7 @@ int main()
         if (bLevelComplete)
         {
             LevelDifficulity++;
-        }
+        }    
     }
     cout << "Congrats.... The file is empty";
     return 0;
