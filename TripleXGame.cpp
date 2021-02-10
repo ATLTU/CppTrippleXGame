@@ -21,10 +21,8 @@ class PointerNum
         int third;
 };
 
-
 int main()
 {
-    
     srand(time(NULL)); //Create new random based on time of day
 
     int LevelDifficulity = 1;

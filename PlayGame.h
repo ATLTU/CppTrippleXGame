@@ -41,7 +41,6 @@ bool PlayGame(int Difficulity)
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProd = GuessA * GuessB * GuessC;
 
-
     cout << "\n The code you wrote add-up to: " << GuessSum;
     cout << "\n The code you wrote multiply to give: " << GuessProd;
 
