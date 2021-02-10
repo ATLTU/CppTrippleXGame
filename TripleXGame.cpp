@@ -61,6 +61,9 @@ int main()
     cout << "Press Enter to exit";
     cin.ignore();
 
+    //Deletes ptr
     delete ptrPointerNum;
+    ptrPointerNum = nullptr;
+
     return 0;
 }
