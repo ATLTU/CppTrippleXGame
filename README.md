@@ -3,7 +3,7 @@ C++ Simple Math Game
 
 ######################################################################
 
-Application made from Udemy tutorial, plus some of own research to fit tasks given by school.
+Application made from Udemy* tutorial, plus some of own research to fit tasks given by school.
 
 ######################################################################
 
@@ -19,3 +19,6 @@ It includes:
 ######################################################################
 
 If you have suggestions/changes feel free to comment
+
+
+* https://www.udemy.com/share/101WeuB0EadlxXQno=/
