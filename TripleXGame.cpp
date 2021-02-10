@@ -2,23 +2,38 @@
 #include "PlayGame.h"
 using namespace std;
 
-class PointerNum
+class BasePointerNum
 {
     public:
-        PointerNum(int one = 1, int two = 2, int three = 3)
+        BasePointerNum();
+        
+        BasePointerNum(int one, int two, int three)
         {
             first = one;
             second = two;
             third = three;
         }
+            int first;
+            int second;
+            int third;
+    private:
+};
+
+class PointerNum : public BasePointerNum
+{
+    public:
+        PointerNum(int one, int two, int three) : BasePointerNum(one, two, three)
+        {
+
+        }
         int All()
         {
             return first * second * third;
         }
-    private:
-        int first;
-        int second;
-        int third;
+        int Sum() 
+        {
+            return first + second + third;
+        }
 };
 
 int main()
@@ -30,7 +45,6 @@ int main()
 
     while (LevelDifficulity <= MaxDifficulity) //Loops the game until all lavels are completed
     {
-        
         bool bLevelComplete = PlayGame(LevelDifficulity);
         
         cin.clear(); //Clears any error
@@ -56,12 +70,12 @@ int main()
     cout << "Pointer1: " << ptrPointerNum ->All() << "\n";
 
     ptrPointerNum =&Pointer2;
-    cout << "Pointer2: " << ptrPointerNum ->All() << "\n";
+    cout << "Pointer2: " << ptrPointerNum ->Sum() << "\n";
 
     cout << "Press Enter to exit";
     cin.ignore();
 
-    //Deletes ptr
+    //Static garbage collector
     delete ptrPointerNum;
     ptrPointerNum = nullptr;
 
